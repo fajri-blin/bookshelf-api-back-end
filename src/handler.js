@@ -65,7 +65,29 @@ const getAllBooksHandler = () => ({
     }
 });
 
-const getBookByIdHandler = (request, h) => {};
+const getBookByIdHandler = (request, h) => {
+    const {id} = request.params;
+
+    //check the books array according to the id
+    const book = books.filter((b) => b.id === id)[0];
+
+    //check if book is not found
+    if(book === undefined){
+        const response = h.response({
+            status : 'fail',
+            message : 'Buku tidak ditemukan',
+        });
+        response.code(404);
+        return response;
+    }
+
+    return {
+        status : 'success',
+        data : {
+            book,
+        }
+    }
+};
 const editBookByIdHandler = (request, h) => {};
 const deleteBookByIdHandler = (request, h) => {};
 
