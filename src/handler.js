@@ -58,7 +58,13 @@ const addBooksHandler = (request, h) => {
     return response;
 };
 
-const getAllBooksHandler = (request, h) => {};
+const getAllBooksHandler = () => ({
+    status :'success',
+    data : {
+        books,
+    }
+});
+
 const getBookByIdHandler = (request, h) => {};
 const editBookByIdHandler = (request, h) => {};
 const deleteBookByIdHandler = (request, h) => {};
