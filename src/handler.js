@@ -1,5 +1,5 @@
-const {nanoid} = require('nanoid');
-const books = require('./books');
+const { nanoid } = require('nanoid');
+const books = require('./books')
 
 const addBooksHandler = (request, h) => {
     //created by user input
